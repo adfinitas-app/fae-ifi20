@@ -1,0 +1,358 @@
+.max-width {
+	max-width: 75rem !important;
+}
+button, .btn-custom {
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+}
+.slide {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.btn-custom {
+	width: 100%;
+	height: 69px;
+	font-family: 'Barlow Condensed', serif;
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 22px;
+	padding-top: 17px;
+	text-align: center;
+}
+.btn-custom.yellow {
+	color: black;
+	background-color: #FFC20E;
+}
+.btn-custom.purple {
+	color: white;
+	background-color: #2F2444;
+}
+.btn-custom.red {
+	color: white;
+	background-color: #DF514D;
+}
+
+#nav {
+	width: 100%;
+	position: fixed;
+	background-color: white;
+	top: 0;
+	z-index: 99;
+	left: 0;
+	height: 44px;
+}
+#nav > div {
+	position: relative;
+}
+#nav .logo {
+	position: absolute;
+	left: 50px;
+	top: 0;
+}
+#nav .inner {
+	width: 80%;
+	margin-left: auto;
+	padding: 10px;
+	text-align: right;
+}
+#nav .inner .nav-btn {
+	color: #2F2444;
+	font-family: 'Barlow Condensed', serif;
+	font-size: 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-right: 20px;
+	vertical-align: middle;
+	line-height: 1;
+}
+#nav .inner .nav-btn img {
+	vertical-align: inherit;
+	margin-right: 5px;
+}
+#header {
+	min-height: 600px;
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/AE/IFI-2020/bg-header.png");
+	text-align: center;
+	padding-top: 25%;
+	margin-top: 44px;
+}
+
+#header h1 {
+	font-family: 'Open Sans', serif;
+	color: white;
+	font-size: 30px;
+	text-shadow: 0px 0px 1px black;
+	font-weight: 700;
+	line-height: 1.1;
+}
+#header .container-btn {
+	width: 316px;
+	margin: 30px auto 0;
+}
+
+#bandeau-covid {
+	background-color: #F0322C;
+	padding: 10px;
+	text-align: center;
+}
+#bandeau-covid p {
+	display: inline-block;
+	color: white;
+}
+#bandeau-covid p.big {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 78px;
+	font-weight: 700;
+	line-height: 1;
+}
+#bandeau-covid p:nth-child(2) {
+	font-family: 'Open Sans', serif;
+	font-size: 18px;
+	line-height: 1.2;
+	text-align: left;
+	margin-left: 8px;
+}
+
+#section-slider {
+	position: relative;
+}
+#section-slider .content {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 150px;
+	z-index: 90;
+
+	background-color: white;
+	width: 333px;
+	max-width: 100%;
+}
+#section-slider .content .inner {
+	padding: 30px;
+}
+#section-slider .content .inner p {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	color: black;
+	line-height: 1.4;
+}
+#section-slider .content .inner p.big {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 65px;
+	font-weight: bold;
+	color: #DF514D;
+	line-height: 0.6;
+	margin-right: 6px;
+	margin-bottom: 0;
+	float: left;
+}
+
+#slider {
+	position: relative;
+}
+#slider .slick-dots {
+	left: 0;
+	right: 0;
+	bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	max-width: 100%;
+}
+.slick-dots li button:before {
+	font-size: 55px !important;
+	color: white !important;
+}
+
+#tabs {
+	padding-top: 10px;
+	padding-bottom: 60px;
+}
+
+#tabs .menu {
+	text-align: center;
+}
+#tabs .menu a {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 22px;
+	color: #2F2444;
+	opacity: 0.5;
+	text-transform: uppercase;
+	line-height: 1.2;
+	font-weight: 600;
+	display: inline-block;
+}
+#tabs .menu a.active {
+	color: #DF514D;
+	opacity: 1;
+	border-bottom: 3px solid #DF514D;
+}
+#tabs .tab-content {
+	display: none;
+	margin-top: 50px;
+}
+#tabs .tab-content .left img {
+	display: block;
+	margin-left: auto;
+	margin-bottom: 25px;
+}
+#tabs .tab-content .left .inline {
+	display: inline-block !important;
+}
+#tabs .tab-content .left p {
+	font-family: 'Open Sans', serif;
+	font-size: 22px;
+	line-height: 1.4;
+	color: black;
+}
+#tabs .tab-content .right p {
+	font-family: 'Open Sans', serif;
+	font-size: 22px;
+	line-height: 1.4;
+	color: black;
+}
+#tabs .tab-content .grey-content {
+	background-color: rgba(0,0,0,0.03);
+	padding: 20px;
+	margin-top: 20px;
+}
+#tabs .tab-content .grey-content p {
+	font-family: 'Open Sans', serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #2F2444;
+	margin: 0;
+}
+#tabs .tab-content .grey-content p.big {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 30px;
+}
+#tabs .tab-content .grey-content p.small {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+#tabs .tab-content .quote-container {}
+#tabs .tab-content .quote-container p {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 40px;
+	font-style: italic;
+	line-height: 1.1;
+	font-weight: 500;
+	color: #DF514D;
+}
+#tabs .tab-content .quote-container p.author {
+	font-size: 18px;
+	font-style: normal;
+	line-height: 1.2;
+	color: black;
+}
+#tabs .tab-content .quote-container p.author span {
+	color: #DF514D;
+}
+#tabs .tab-content .right p.very-small {
+	margin-top: 20px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+
+#deduction {
+	padding-top: 40px;
+	padding-bottom: 50px;
+}
+#deduction .title {
+	text-align: center;
+	margin-bottom: 60px;
+}
+#deduction .title p:nth-child(2) {
+	color: #DF514D;
+	font-size: 124px;
+	text-align: left;
+}
+#deduction .title p {
+	font-family: 'Barlow Condensed', serif;
+	color: #2F2444;
+	font-weight: 600;
+	font-size: 50px;
+	text-transform: uppercase;
+	display: inline-block;
+	line-height: 1;
+	text-align: right;
+	margin: 0;
+}
+#deduction .title p.small {
+	font-family: 'Open Sans', serif;
+	color: #2F2444;
+	font-weight: 600;
+	font-size: 20px;
+	text-transform: none;
+	line-height: 1.2;
+}
+
+#deduction {
+	background-color: rgba(0,0,0,0.03);
+	text-align: center;
+}
+#deduction .box {
+	text-align: center;
+	display: inline-block;
+	margin: 10px;
+	width: 472px;
+	max-width: 100%;
+	padding: 10px 40px 30px;
+	background-color: white;
+}
+#deduction .box.purple {
+	color: #2F2444;
+	border-top: 3px solid #2F2444;
+}
+#deduction .box.red {
+	color: #DF514D;
+	border-top: 3px solid #DF514D;
+}
+#deduction .box .head {}
+#deduction .box .head p {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 30px;
+	font-weight: 600;
+	display: inline-block;
+	text-transform: uppercase;
+	text-align: left;
+	line-height: 1.2;
+}
+#deduction .box .head p:nth-child(1) {
+	font-size: 87px;
+	text-align: right;
+}
+#deduction .box .text {
+	font-family: 'Open Sans', serif;
+	line-height: 1.2;
+	color: black;
+	font-size: 20px;
+	text-align: left;
+}
+#deduction .box .btn-calcul {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 19px;
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 1.2;
+	color: inherit;
+	margin-top: 25px;
+	display: block;
+	width: 100%;
+}
+#deduction .box .btn-calcul img {
+	vertical-align: baseline;
+	margin-right: 5px;
+}
+@media screen and (max-width: 640px) {
+}
+
+
