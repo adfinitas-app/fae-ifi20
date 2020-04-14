@@ -9,6 +9,8 @@ $(window).resize( function() {
 
 $(document).ready( function() {
     handleTabContent('tab1')
+    fillLink()
+    fillLinkCalculette()
 
     $('#slider').slick({
         slidesToShow: 1,
@@ -20,37 +22,30 @@ $(document).ready( function() {
         arrows: false
     });
 
+    $('#amount-don').on('keypress', function (event) {
+        var regex = new RegExp("^[0-9]+$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        }
+    });
+
     $('#amount-don').on('input', function() {
-        var value = $(this).val()
+        var input = $('#amount-don')
+        var value = input.val()
 
-        $('#amount-btn').text(value)
-
+        if (value.charAt(0) === '0')
+            input.val(value.substring(1, value.length))
+        if ($('#amount-don').val() === '')
+            $('#amount-don').val(0)
+        handleCalculette()
     });
 
 
     $('#switch').click(() => {
-        var value = $('#amount-don').val()
-
-        if (toggle) { // IR
-            toggle = false
-            $('.switch p:nth-child(3)').css('opacity', '0.3')
-            $('.switch p:nth-child(4)').css('opacity', '1')
-            $('.switch p:nth-child(4)').css('color', '#DF514D')
-
-
-            $('#name-btn').text('IR')
-        }
-        else { // IFI
-            toggle = true
-            $('.switch p:nth-child(3)').css('opacity', '1')
-            $('.switch p:nth-child(4)').css('opacity', '0.3')
-            $('.switch p:nth-child(4)').css('color', '#2F2444')
-
-
-            $('#name-btn').text('IFI')
-
-
-        }
+        handleSwitch()
+        handleCalculette()
     })
 
 
@@ -71,6 +66,51 @@ $(document).ready( function() {
 $('#tabs .menu a').click((el) => {
     handleTabContent($(el.target).attr('target'))
 })
+
+function handleSwitch() {
+    if (toggle) { // IR
+        toggle = false
+
+        $('.switch p:nth-child(3)').css('opacity', '0.3')
+        $('.switch p:nth-child(4)').css('opacity', '1')
+        $('.switch p:nth-child(4)').css('color', '#DF514D')
+
+        $('#name-btn').text('IR')
+    }
+    else { // IFI
+        toggle = true
+
+        $('.switch p:nth-child(3)').css('opacity', '1')
+        $('.switch p:nth-child(4)').css('opacity', '0.3')
+        $('.switch p:nth-child(4)').css('color', '#2F2444')
+
+        $('#name-btn').text('IFI')
+    }
+}
+function handleCalculette() {
+    var input = $('#amount-don')
+    var value = input.val().replace(' ', '')
+    input.val(value)
+
+    var valueDeduction
+    var valueAfterDeduction
+
+    if (toggle) { // IFI
+        valueDeduction = value * 0.665
+
+        $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=97&lang=fr_FR&amount=${value}00`)
+    }
+    else { // IR
+        valueDeduction = value * 0.75
+
+        $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=106&lang=fr_FR&amount=${value}00`)
+    }
+    fillLinkCalculette()
+    valueAfterDeduction = value - valueDeduction
+
+    $('#deduction-don').text(valueDeduction)
+    $('#after-deduction-don').text(valueAfterDeduction)
+}
 
 function handleTabContent(nb) {
     $('#tabs .menu a').each((el) => {
@@ -107,3 +147,74 @@ function 	scrollToNext(next){
         scrollTop: $(window).width() > 640 ? $(next).offset().top - 44 : $(next).offset().top - 0
     }, 700, 'swing');
 }
+
+function fillLinkCalculette() {
+    let p = extractUrlParams();
+    let string = ''
+
+
+    if (p['email'] && p['email'] !== "undefined")
+        string += ("&email=" + p['email']);
+    if (p['wv_email'] && p['wv_email'] !== "undefined")
+        string += ("&email=" + p['wv_email']);
+    if (p['wv_firstname'] && p['wv_firstname'] !== "undefined")
+        string += ("&firstname=" + p['wv_firstname']);
+    if (p['firstname'] && p['firstname'] !== "undefined")
+        string += ("&firstname=" + p['firstname']);
+    if (p['wv_lastname'] && p['wv_lastname'] !== "undefined")
+        string += ("&lastname=" + p['wv_lastname']);
+    if (p['lastname'] && p['lastname'] !== "undefined")
+        string += ("&lastname=" + p['lastname']);
+    if (p['reserved_code_media'] && p['reserved_code_media'] !== "undefined")
+        string += ("&reserved_code_media=" + p['reserved_code_media']);
+    if (p['utm_campaign'] && p['utm_campaign'] !== "undefined")
+        string += ("&utm_campaign=" + p['utm_campaign']);
+    if (p['utm_source'] && p['utm_source'] !== "undefined")
+        string += ("&utm_source=" + p['utm_source']);
+    if (p['utm_medium'] && p['utm_medium'] !== "undefined")
+        string += ("&utm_medium=" + p['utm_medium']);
+
+        $('#btn-don').attr('href', $('#btn-don').attr('href') + string)
+}
+
+function fillLink() {
+    let p = extractUrlParams();
+    let string = ''
+
+
+    if (p['email'] && p['email'] !== "undefined")
+        string += ("&email=" + p['email']);
+    if (p['wv_email'] && p['wv_email'] !== "undefined")
+        string += ("&email=" + p['wv_email']);
+    if (p['wv_firstname'] && p['wv_firstname'] !== "undefined")
+        string += ("&firstname=" + p['wv_firstname']);
+    if (p['firstname'] && p['firstname'] !== "undefined")
+        string += ("&firstname=" + p['firstname']);
+    if (p['wv_lastname'] && p['wv_lastname'] !== "undefined")
+        string += ("&lastname=" + p['wv_lastname']);
+    if (p['lastname'] && p['lastname'] !== "undefined")
+        string += ("&lastname=" + p['lastname']);
+    if (p['reserved_code_media'] && p['reserved_code_media'] !== "undefined")
+        string += ("&reserved_code_media=" + p['reserved_code_media']);
+    if (p['utm_campaign'] && p['utm_campaign'] !== "undefined")
+        string += ("&utm_campaign=" + p['utm_campaign']);
+    if (p['utm_source'] && p['utm_source'] !== "undefined")
+        string += ("&utm_source=" + p['utm_source']);
+    if (p['utm_medium'] && p['utm_medium'] !== "undefined")
+        string += ("&utm_medium=" + p['utm_medium']);
+
+    $('.link-don').each((el) => {
+        $('.link-don').eq(el).attr('href', $('.link-don').eq(el).attr('href') + string)
+    })
+
+
+}
+
+function extractUrlParams(){
+    var t = document.location.search.substring(1).split('&'); var f = [];
+    for (var i=0; i<t.length; i++){
+        var x = t[ i ].split('=');
+        f[x[0]]=decodeURIComponent(x[1]);
+    }
+    return f;
+};

@@ -222,7 +222,7 @@ button, .btn-custom {
 	max-width: 100%;
 }
 .slick-dots li button:before {
-	font-size: 55px !important;
+	font-size: 20px !important;
 	color: white !important;
 }
 
@@ -597,6 +597,10 @@ input:checked + .switch-slider:before {
 	color: black;
 	float: right;
 }
+#calcul-section .display .reduction strong {
+	font-weight: 400;
+}
+
 #calcul-section .display .after-deduction {
 	margin-bottom: 15px;
 }
@@ -617,6 +621,9 @@ input:checked + .switch-slider:before {
 	line-height: 1.2;
 	color: #DF514D;
 	float: right;
+}
+#calcul-section .display .after-deduction strong {
+	font-weight: 600;
 }
 #calcul-section .btn-custom {
 	margin-top: 30px;
