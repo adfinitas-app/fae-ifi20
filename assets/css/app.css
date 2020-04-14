@@ -1,6 +1,11 @@
 .max-width {
 	max-width: 75rem !important;
 }
+/** {*/
+/*	background: #000 !important;*/
+/*	color: #0f0 !important;*/
+/*	outline: solid #f00 1px !important;*/
+/*	}*/
 button, .btn-custom {
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .1s ease-in-out;
@@ -12,7 +17,9 @@ button, .btn-custom {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+.red {
+	color: #DF514D !important;
+}
 .btn-custom {
 	width: 100%;
 	height: 69px;
@@ -29,30 +36,80 @@ button, .btn-custom {
 	background-color: #FFC20E;
 }
 .btn-custom.purple {
-	color: white;
+	color: white !important;
 	background-color: #2F2444;
 }
 .btn-custom.red {
-	color: white;
+	color: white !important;
 	background-color: #DF514D;
 }
 
-#nav {
+#menu-mobile {
+	display: none;
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+	padding: 10px 5px;
+	background-color: white;
+	z-index: 100;
+}
+#menu-mobile .inner {
+	position: relative;
+	margin-left: 0 !important;
+	width: 100% !important;
+	margin-top: 120px;
+	z-index: 10;
+}
+#menu-mobile .inner ul {
+	list-style: none;
+	margin: 0;
+	text-align: left;
+}
+#menu-mobile .inner li {
+	border-bottom: 1px solid rgba(47,36,68,0.3);
+	margin-bottom: 10px;
+}
+#menu-mobile .inner li a {
+	color: #2F2444;
+	font-family: 'Barlow Condensed', serif;
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 1.1;
+	display: block;
+	margin-bottom: 20px;
+}
+#menu-mobile .btn-custom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
 	width: 100%;
+}
+#open-menu, #close-menu {
+	float: right;
+	z-index: 200;
+}
+#close-menu {
+	margin-right: 17px;
+}
+#nav {
 	position: fixed;
 	background-color: white;
 	top: 0;
 	z-index: 99;
 	left: 0;
+	right: 0;
 	height: 44px;
 }
 #nav > div {
 	position: relative;
+	width: 100%;
+	max-width: 100%;
 }
 #nav .logo {
 	position: absolute;
 	left: 50px;
 	top: 0;
+	z-index: 101;
 }
 #nav .inner {
 	width: 80%;
@@ -76,7 +133,7 @@ button, .btn-custom {
 }
 #header {
 	min-height: 600px;
-	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/AE/IFI-2020/bg-header.png");
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/AE/IFI-2020/bg-header.jpg");
 	text-align: center;
 	padding-top: 25%;
 	margin-top: 44px;
@@ -187,10 +244,25 @@ button, .btn-custom {
 	font-weight: 600;
 	display: inline-block;
 }
+#tabs .menu a .image-nonactive {
+	display: inline-block;
+}
+#tabs .menu a .image-active {
+	display: none;
+}
+#tabs .menu a.active .image-nonactive {
+	display: none;
+}
+#tabs .menu a.active .image-active {
+	display: inline-block;
+}
 #tabs .menu a.active {
 	color: #DF514D;
 	opacity: 1;
 	border-bottom: 3px solid #DF514D;
+}
+#tabs .menu a.active path {
+	fill: #DF514D;
 }
 #tabs .tab-content {
 	display: none;
@@ -352,7 +424,621 @@ button, .btn-custom {
 	vertical-align: baseline;
 	margin-right: 5px;
 }
+
+
+#calcul-section {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+#calcul-section .title {
+	text-align: center;
+}
+#calcul-section .title h3 {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 45px;
+	font-weight: 600;
+	color: #2F2444;
+	line-height: 1;
+	margin-bottom: 25px;
+}
+#calcul-section .title p {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	line-height: 1.2;
+	color: black;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 73px;
+	height: 42px;
+}
+
+.switch p {
+	position: absolute;
+	top: -4px;
+	font-family: 'Barlow Condensed', serif;
+	font-size: 45px;
+	font-weight: 600;
+	color: #2F2444;
+	opacity: 0.3;
+	margin: 0;
+	transition: .4s;
+	line-height: 1;
+}
+.switch p:nth-child(3) {
+	opacity: 1;
+	left: -55px;
+}
+.switch p:nth-child(4) {
+	right: -55px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.switch-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(47,36,69,0.1);
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.switch-slider:before {
+	position: absolute;
+	content: "";
+	height: 32px;
+	width: 32px;
+	left: 4px;
+	bottom: 5px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .switch-slider {
+}
+
+input:checked + .switch-slider.round:before{
+	background-color: #DF514D;
+}
+input:checked + .switch p:nth-child(3){
+	opacity: 0.3;
+}
+input:checked + .switch p:nth-child(4){
+	color: #DF514D;
+}
+
+input:checked + .switch-slider:before {
+	-webkit-transform: translateX(33px);
+	-ms-transform: translateX(33px);
+	transform: translateX(33px);
+}
+.switch-slider.round {
+	border-radius: 34px;
+}
+
+.switch-slider.round:before {
+	background-color: #2F2444;
+	border-radius: 50%;
+}
+
+#calcul-section .display {
+	margin-top: 30px;
+}
+#calcul-section .display .amount {
+	margin-bottom: 15px;
+}
+#calcul-section .display .amount p {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	line-height: 1.2;
+	color: black;
+	font-weight: 700;
+	float: left;
+	margin: 28px 0 0;
+}
+#calcul-section .display .amount .input-container {
+	float: right;
+	border-radius: 15px;
+	background-color: rgba(0,0,0,0.05);
+	position: relative;
+}
+#calcul-section .display .amount .input-container .currencyinput {
+	position: absolute;
+	top: 2px;
+	right: 4px;
+	font-family: 'Open Sans', serif;
+	font-size: 30px;
+	color: black;
+	font-weight: 700;
+}
+#calcul-section .display .amount input {
+	width: 200px;
+	margin: 0;
+	box-shadow: none;
+	border: none;
+	height: 58px;
+	background-color: transparent;
+	padding-right: 30px;
+	text-align: right;
+	font-family: 'Open Sans', serif;
+	font-size: 30px;
+	color: black;
+	font-weight: 700;
+}
+#calcul-section .display .reduction {
+	margin-bottom: 15px;
+}
+#calcul-section .display .reduction p {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	line-height: 1.2;
+	opacity: 0.3;
+	color: black;
+	margin: 10px 0 0;
+	float: left;
+}
+#calcul-section .display .reduction span {
+	display: block;
+	font-family: 'Open Sans', serif;
+	font-size: 30px;
+	line-height: 1.2;
+	opacity: 0.3;
+	color: black;
+	float: right;
+}
+#calcul-section .display .after-deduction {
+	margin-bottom: 15px;
+}
+#calcul-section .display .after-deduction p {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: #DF514D;
+	float: left;
+	margin: 10px 0 0;
+}
+#calcul-section .display .after-deduction span {
+	display: block;
+	font-family: 'Open Sans', serif;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: #DF514D;
+	float: right;
+}
+#calcul-section .btn-custom {
+	margin-top: 30px;
+}
+
+
+#quand-section {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+#quand-section .left {}
+#quand-section .left h6 {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 43px;
+	font-weight: 600;
+	color: #2F2444;
+	text-transform: uppercase;
+	line-height: 1;
+}
+#quand-section .left p {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	line-height: 1.2;
+	color: #2F2444;
+
+}
+#quand-section .left .grey-container {
+	margin-top: 40px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#quand-section .grey-container {
+	padding: 14px 55px;
+	background-color: rgba(0,0,0,0.03);
+	text-align: center;
+	margin-bottom: 10px;
+}
+#quand-section .grey-container img {
+	margin: 10px 0;
+}
+#quand-section .grey-container p {
+	margin: 0;
+}
+#quand-section .grey-container p.big {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 25px;
+	color: #2F2444;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+#quand-section .grey-container p.medium {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: 600;
+}
+#quand-section  p.small {
+	font-family: 'Open Sans', serif;
+	font-size: 12px;
+	line-height: 1.2;
+	color: #2F2444;
+}
+#quand-section .grey-container p.very-small {
+	text-align: right;
+	font-family: 'Open Sans', serif;
+	font-size: 10px;
+	line-height: 1.2;
+}
+#quand-section .grey-container p.grey {
+	opacity: 0.5;
+}
+#quand-section p.dark-grey {
+	opacity: 0.7;
+}
+
+
+#pourquoi-section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/AE/IFI-2020/bg-soutien.jpg");
+}
+#pourquoi-section .title {}
+#pourquoi-section .title h6 {
+	margin-left: 26px;
+	font-family: 'Barlow Condensed', serif;
+	font-size: 45px;
+	color: white;
+	font-weight: 600;
+	margin-bottom: 30px;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+#pourquoi-section .box {
+	display: inline-block;
+	width: 45%;
+	background-color: white;
+	padding: 10px;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	vertical-align: top;
+}
+#pourquoi-section .box p.pre {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 14px;
+	color: #DF514D;
+	font-weight: 600;
+	line-height: 1;
+	margin: 0;
+	text-transform: uppercase;
+}
+#pourquoi-section .box p.big {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 72px;
+	color: #2F2444;
+	font-weight: 500;
+	line-height: 1;
+	margin: 0;
+	text-transform: uppercase;
+}
+#pourquoi-section .box p.normal {
+	font-family: 'Open Sans', serif;
+	font-size: 20px;
+	color: #2F2444;
+	font-weight: 600;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+#pourquoi-section .box p.small {
+	font-family: 'Open Sans', serif;
+	font-size: 14px;
+	color: black;
+	line-height: 1.4;
+}
+#pourquoi-section .box.small {
+	width: 46%;
+	height: 200px;
+	margin: 10px;
+}
+#pourquoi-section .box.big {
+	text-align: left;
+	height: 420px;
+	width: 100%;
+	padding: 35px;
+	margin-top: 10px;
+}
+#pourquoi-section .box.big img {
+	margin-bottom: 15px;
+}
+
+#footer {
+	padding: 20px 10px;
+}
+#footer .left {
+	padding-top: 20px;
+}
+#footer .left p {
+	margin: 0;
+}
+#footer .left p a {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 18px;
+	color: #2F2444;
+	font-weight: 500;
+}
+#footer .left p.small {
+	font-family: 'Open Sans', serif;
+	font-size: 14px;
+	color: #2F2444;
+	opacity: 0.7;
+	margin: 10px 0 0;
+}
+#footer .right {
+	text-align: right;
+	padding-top: 40px;
+}
+#footer .right p span {
+	font-family: 'Barlow Condensed', serif;
+	font-size: 18px;
+	color: black;
+	opacity: 0.3;
+	text-transform: uppercase;
+	margin-right: 10px;
+}
+#footer .right p img {
+	opacity: 1;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+@media screen and (max-width: 1010px) {
+	#section-slider .content {
+		top: 47%;
+		left: 26px;
+	}
+	.slick-dots li button:before {
+		font-size: 20px !important;
+	}
+	#section-slider .content .inner {
+		padding: 20px;
+	}
+	#section-slider .content .inner p {
+		font-size: 16px;
+		margin: 0;
+	}
+
+	#tabs .tab-content {
+		padding: 30px;
+	}
+	#quand-section .left {
+		text-align: center;
+	}
+	#quand-section .grey-container {
+		padding: 14px 120px;
+		width: 500px;
+		max-width: 100%;
+		margin: 0 auto 20px;
+	}
+	#quand-section p.dark-grey {
+		text-align: center;
+	}
+
+
+	#pourquoi-section .box {
+		width: 100% !important;
+		margin: 10px 0  !important;
+	}
+	#pourquoi-section .box.big {
+		height: auto;
+	}
+	#pourquoi-section {
+		background-position: 10% 50%;
+	}
+
+	#pourquoi-section .title h6 {
+		text-shadow: 0px 0px 1px black;
+	}
+
+
+	#footer .right {
+		text-align: center;
+	}
+
+
+}
 @media screen and (max-width: 640px) {
+	#nav {
+		background-color: transparent;
+		padding-right: 20px;
+		padding-top: 10px;
+	}
+
+	#nav .logo {
+		left: 10px;
+		max-width: 75px;
+		top: -4px;
+	}
+	#header {
+		margin-top: 0;
+		padding-top: 60%;
+		background-position: 55% 50%;
+	}
+	#header h1 {
+		font-size: 20px;
+		width: 80%;
+		margin: 0 auto;
+	}
+	#header .btn-custom {
+		width: 80%;
+		margin: 40px auto 0;
+	}
+
+	#section-slider .content {
+		width: auto;
+		position: static;
+		transform: none;
+	}
+	#bandeau-covid .text {
+		text-align: left;
+	}
+	#bandeau-covid p:nth-child(1) {
+		font-size: 53px;
+	}
+	#bandeau-covid p:nth-child(2) {
+		font-size: 16px;
+		margin-left: 0;
+	}
+	#section-slider .content .inner {
+		padding: 30px;
+	}
+	#slider .slick-dots {
+		bottom: 10px;
+	}
+
+	#tabs .menu a img {
+		display: block;
+		margin-right: 15px;
+		vertical-align: middle;
+	}
+	#tabs .menu a span {
+		display: inline-block;
+		vertical-align: middle;
+		width: 80%;
+	}
+	#tabs .menu a {
+		position: relative;
+		z-index: 88;
+		text-align: left;
+		display: block;
+		font-size: 20px;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	#tabs .menu a.active {
+		border-bottom: none;
+	}
+
+	#tabs .tab-content {
+		margin-top: 0;
+		padding: 10px;
+	}
+	#tabs .tab-content .left img {
+		margin: 0 auto 20px;
+	}
+	#tabs .tab-content .right p {
+		font-size: 18px;
+	}
+	#tabs .tab-content .quote-container p {
+		font-size: 35px;
+	}
+
+	#deduction .title p {
+		display: block;
+		text-align: center;
+		font-size: 40px;
+	}
+	#deduction .title p:nth-child(2) {
+		text-align: center;
+	}
+	#deduction .title p.small {
+		font-size: 18px;
+	}
+
+	#deduction .box {
+		width: auto;
+		margin: 0 0 20px;
+		padding: 10px;
+	}
+	#deduction .box .text {
+		font-size: 18px;
+	}
+	#deduction .box .btn-calcul {
+		font-size: 15px;
+	}
+
+
+	#calcul-section .title {
+		padding: 15px;
+	}
+	#calcul-section .title p {
+		font-size: 18px;
+	}
+	#calcul-section .display {
+		padding: 15px;
+	}
+	#calcul-section .display .amount p {
+		margin: 7px 0 0;
+		font-size: 16px;
+	}
+	#calcul-section .display .amount input {
+		width: 175px;
+		max-width: 100%;
+	}
+	#calcul-section .display .reduction p {
+		font-size: 16px;
+	}
+	#calcul-section .display .after-deduction p {
+		margin: 2px 0 0;
+		font-size: 14px;
+	}
+
+
+	#quand-section {
+		margin-top: 40px;
+	}
+	#quand-section .left p {
+		font-size: 18px;
+	}
+	#quand-section .left .grey-container {
+		padding: 20px;
+	}
+	#quand-section .grey-container {
+		padding: 20px;
+	}
+
+
+
+	#pourquoi-section {
+		background-image: none;
+	}
+	#pourquoi-section .title {
+		padding: 30px 10px;
+		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/AE/IFI-2020/bg-soutien-small.png");
+		background-position: 100% 50%;
+	}
+	#pourquoi-section .title h6 {
+		font-size: 40px;
+	}
+	#pourquoi-section .box {
+		padding-bottom: 20px;
+	}
+	#pourquoi-section .box.small {
+		height: 170px;
+	}
+	#pourquoi-section .box.big {
+		text-align: center;
+	}
+
+
+	#footer .left p a {
+		font-size: 15px;
+	}
+
 }
 
 
