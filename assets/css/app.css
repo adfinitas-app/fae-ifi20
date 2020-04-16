@@ -222,8 +222,9 @@ button, .btn-custom {
 	max-width: 100%;
 }
 .slick-dots li button:before {
-	font-size: 20px !important;
+	font-size: 65px !important;
 	color: white !important;
+	font-family: Arial, serif !important;
 }
 
 #tabs {
@@ -817,9 +818,6 @@ input:checked + .switch-slider:before {
 	#section-slider .content {
 		top: 47%;
 		left: 26px;
-	}
-	.slick-dots li button:before {
-		font-size: 20px !important;
 	}
 	#section-slider .content .inner {
 		padding: 20px;

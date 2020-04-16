@@ -94,22 +94,39 @@ function handleCalculette() {
 
     var valueDeduction
     var valueAfterDeduction
+    var jalon
 
     if (toggle) { // IFI
-        valueDeduction = value * 0.665
+        jalon = 50000
+
+        if (value > jalon)
+            valueDeduction = 37500 + ((value - 50000) * 0.66)
+        else
+            valueDeduction = value * 0.665
+
+
 
         $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=97&lang=fr_FR&amount=${value}00`)
     }
     else { // IR
-        valueDeduction = value * 0.75
+        jalon = 552
+
+        if (value > jalon)
+            valueDeduction = 414 + ((value - 552) * 0.66)
+        else
+            valueDeduction = value * 0.75
+
+
+
+
 
         $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=106&lang=fr_FR&amount=${value}00`)
     }
     fillLinkCalculette()
     valueAfterDeduction = value - valueDeduction
 
-    $('#deduction-don').text(valueDeduction)
-    $('#after-deduction-don').text(valueAfterDeduction)
+    $('#deduction-don').text(valueDeduction.toFixed(2))
+    $('#after-deduction-don').text(valueAfterDeduction.toFixed(2))
 }
 
 function handleTabContent(nb) {
@@ -174,7 +191,7 @@ function fillLinkCalculette() {
     if (p['utm_medium'] && p['utm_medium'] !== "undefined")
         string += ("&utm_medium=" + p['utm_medium']);
 
-        $('#btn-don').attr('href', $('#btn-don').attr('href') + string)
+    $('#btn-don').attr('href', $('#btn-don').attr('href') + string)
 }
 
 function fillLink() {
