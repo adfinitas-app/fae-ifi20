@@ -98,11 +98,7 @@ function handleCalculette() {
 
     if (toggle) { // IFI
         jalon = 50000
-
-        if (value > jalon)
-            valueDeduction = 37500 + ((value - 50000) * 0.66)
-        else
-            valueDeduction = value * 0.665
+        valueDeduction = value * 0.75
 
 
 
@@ -110,21 +106,16 @@ function handleCalculette() {
     }
     else { // IR
         jalon = 552
-
-        if (value > jalon)
-            valueDeduction = 414 + ((value - 552) * 0.66)
-        else
-            valueDeduction = value * 0.75
-
-
-
-
+        valueDeduction = value * 0.75
 
         $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=106&lang=fr_FR&amount=${value}00`)
     }
     fillLinkCalculette()
+    if (valueDeduction > jalon)
+        valueDeduction = jalon
     valueAfterDeduction = value - valueDeduction
 
+    $('#amount-btn').text(value)
     $('#deduction-don').text(valueDeduction.toFixed(2))
     $('#after-deduction-don').text(valueAfterDeduction.toFixed(2))
 }
