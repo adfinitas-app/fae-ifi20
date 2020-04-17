@@ -269,10 +269,23 @@ button, .btn-custom {
 	display: none;
 	margin-top: 50px;
 }
-#tabs .tab-content .left img {
+#tabs .tab-content .left .container-relative {
 	display: block;
+	position: relative;
 	margin-left: auto;
 	margin-bottom: 25px;
+}
+#tabs .tab-content .left p.absolute-presentation {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+
+	font-family: 'Open Sans', serif;
+	font-size: 12px;
+	margin: 0;
+	font-weight: 600;
+	line-height: 1.4;
+	color: white;
 }
 #tabs .tab-content .left .inline {
 	display: inline-block !important;

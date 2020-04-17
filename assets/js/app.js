@@ -100,19 +100,24 @@ function handleCalculette() {
         jalon = 50000
         valueDeduction = value * 0.75
 
-
+        if (valueDeduction > jalon)
+            valueDeduction = jalon
 
         $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=97&lang=fr_FR&amount=${value}00`)
     }
     else { // IR
-        jalon = 552
+        jalon = 736
         valueDeduction = value * 0.75
+
+        if (value > jalon)
+            valueDeduction = 552 + ((value - 736) * 0.66)
+        else
+            valueDeduction = value * 0.75
 
         $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=106&lang=fr_FR&amount=${value}00`)
     }
     fillLinkCalculette()
-    if (valueDeduction > jalon)
-        valueDeduction = jalon
+
     valueAfterDeduction = value - valueDeduction
 
     $('#amount-btn').text(value)
