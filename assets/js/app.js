@@ -43,19 +43,19 @@ $(document).ready( function() {
     });
 
 
-    $('#switch').click(() => {
+    $('#switch').click(function () {
         handleSwitch()
         handleCalculette()
     })
 
 
-    $('#open-menu').click((e) => {
+    $('#open-menu').click(function (e) {
         e.preventDefault()
         $('#open-menu').hide()
         $('#menu-mobile').show()
     })
 
-    $('#close-menu').click((e) => {
+    $('#close-menu').click(function (e) {
         e.preventDefault()
         $('#open-menu').show()
         $('#menu-mobile').hide()
@@ -63,7 +63,7 @@ $(document).ready( function() {
 
 });
 
-$('#tabs .menu a').click((el) => {
+$('#tabs .menu a').click(function (el) {
     handleTabContent($(el.target).attr('target'))
 })
 
@@ -103,7 +103,7 @@ function handleCalculette() {
         if (valueDeduction > jalon)
             valueDeduction = jalon
 
-        $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=97&lang=fr_FR&amount=${value}00`)
+        $('#btn-don').attr('href', 'https://donner.actionenfance.org/b?cid=97&lang=fr_FR&amount=' + value + '00')
     }
     else { // IR
         jalon = 736
@@ -114,7 +114,7 @@ function handleCalculette() {
         else
             valueDeduction = value * 0.75
 
-        $('#btn-don').attr('href', `https://donner.actionenfance.org/b?cid=106&lang=fr_FR&amount=${value}00`)
+        $('#btn-don').attr('href', 'https://donner.actionenfance.org/b?cid=106&lang=fr_FR&amount=' + value + '00')
     }
     fillLinkCalculette()
 
@@ -126,20 +126,18 @@ function handleCalculette() {
 }
 
 function handleTabContent(nb) {
-    $('#tabs .menu a').each((el) => {
+    $('#tabs .menu a').each(function (el) {
         if ($('#tabs .menu a').eq(el).attr('target') === nb) {
             $('#tabs .menu a').eq(el).addClass('active')
-        }
-        else {
+        } else {
             $('#tabs .menu a').eq(el).removeClass('active')
         }
     })
 
-    $('.tab-content').each((el) => {
+    $('.tab-content').each(function (el) {
         if ($('.tab-content').eq(el).attr('target') === nb) {
             $('.tab-content').eq(el).show()
-        }
-        else {
+        } else {
             $('.tab-content').eq(el).hide()
         }
     })
@@ -216,7 +214,7 @@ function fillLink() {
     if (p['utm_medium'] && p['utm_medium'] !== "undefined")
         string += ("&utm_medium=" + p['utm_medium']);
 
-    $('.link-don').each((el) => {
+    $('.link-don').each(function (el) {
         $('.link-don').eq(el).attr('href', $('.link-don').eq(el).attr('href') + string)
     })
 

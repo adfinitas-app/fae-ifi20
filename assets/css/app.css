@@ -989,6 +989,10 @@ input:checked + .switch-slider:before {
 		font-size: 15px;
 	}
 
+	#tabs .tab-content .left p.absolute-presentation {
+		bottom: 25px;
+	}
+
 
 	#calcul-section .title {
 		padding: 15px;
