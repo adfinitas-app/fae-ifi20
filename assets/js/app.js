@@ -106,11 +106,10 @@ function handleCalculette() {
         $('#btn-don').attr('href', 'https://donner.actionenfance.org/b?cid=97&lang=fr_FR&amount=' + value + '00')
     }
     else { // IR
-        jalon = 1333
-        valueDeduction = value * 0.75
+        jalon = 1000
 
         if (value > jalon)
-            valueDeduction = 1000 + ((value - 1333) * 0.66)
+            valueDeduction = 750 + ((value - 1000) * 0.66)
         else
             valueDeduction = value * 0.75
 
