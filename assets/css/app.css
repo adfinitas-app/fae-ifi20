@@ -298,9 +298,13 @@ button, .btn-custom {
 }
 #tabs .tab-content .right p {
 	font-family: 'Open Sans', serif;
-	font-size: 22px;
+	font-size: 20px;
 	line-height: 1.4;
 	color: black;
+}
+#tabs .tab-content .right p .big {
+	font-weight: bold;
+	color: #CF5B53;
 }
 #tabs .tab-content .grey-content {
 	background-color: rgba(0,0,0,0.03);
@@ -326,7 +330,7 @@ button, .btn-custom {
 #tabs .tab-content .quote-container {}
 #tabs .tab-content .quote-container p {
 	font-family: 'Barlow Condensed', serif;
-	font-size: 40px;
+	font-size: 30px;
 	font-style: italic;
 	line-height: 1.1;
 	font-weight: 500;
@@ -343,7 +347,11 @@ button, .btn-custom {
 }
 #tabs .tab-content .right p.very-small {
 	margin-top: 20px;
-	font-size: 12px;
+	color: rgba(47,36,68,0.7);
+	width: 70%;
+	text-transform: none;
+	font-size: 15px;
+	font-style: normal;
 	font-weight: normal;
 }
 
@@ -356,31 +364,57 @@ button, .btn-custom {
 	text-align: center;
 	margin-bottom: 60px;
 }
-#deduction .title p:nth-child(2) {
-	color: #DF514D;
-	font-size: 124px;
-	text-align: left;
+#deduction .title .inner {
+	width: 436px;
+	background-color: rgba(47,36,68,0.1);
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 10px;
 }
-#deduction .title p {
-	font-family: 'Barlow Condensed', serif;
-	color: #2F2444;
-	font-weight: 600;
-	font-size: 50px;
-	text-transform: uppercase;
-	display: inline-block;
-	line-height: 1;
-	text-align: right;
-	margin: 0;
+#deduction .title .inner .inner-inner {
+	border: 1px solid white;
+	padding: 20px;
 }
-#deduction .title p.small {
-	font-family: 'Open Sans', serif;
-	color: #2F2444;
-	font-weight: 600;
-	font-size: 20px;
-	text-transform: none;
+#deduction .title p.un {
+	font-size: 28px;
+	letter-spacing: 1px;
 	line-height: 1.2;
+	color: #DF514D;
+	width: auto;
+	text-transform: uppercase;
+	font-family: 'Barlow Condensed', serif;
+	font-weight: 500;
+	margin-bottom: 5px;
 }
-
+#deduction .title p.sub span {
+	font-weight: 600;
+}
+#deduction .title p.sub {
+	max-width: 100%;
+	font-family: 'Open Sans', serif;
+	width: 581px;
+	font-weight: 400;
+	font-size: 20px;
+	margin: 20px auto 0;
+	line-height: 1.2;
+	color: #2F2444;
+}
+#deduction .title p.un span {
+	color: #2F2444;
+}
+#deduction .title p.deux {
+	font-size: 46px;
+	text-align: center;
+	width: auto;
+	letter-spacing: 20px;
+	text-indent: 12px;
+	line-height: 0.7;
+	color: #DF514D;
+	text-transform: uppercase;
+	font-family: 'Barlow Condensed', serif;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
 #deduction {
 	background-color: rgba(0,0,0,0.03);
 	text-align: center;
@@ -670,7 +704,7 @@ input:checked + .switch-slider:before {
 	padding-bottom: 50px;
 }
 #quand-section .grey-container {
-	padding: 14px 55px;
+	padding: 14px 50px;
 	background-color: rgba(0,0,0,0.03);
 	text-align: center;
 	margin-bottom: 10px;
@@ -692,7 +726,7 @@ input:checked + .switch-slider:before {
 	font-family: 'Open Sans', serif;
 	font-size: 20px;
 	line-height: 1.2;
-	font-weight: 600;
+	font-weight: 700;
 }
 #quand-section  p.small {
 	font-family: 'Open Sans', serif;
@@ -734,10 +768,8 @@ input:checked + .switch-slider:before {
 	display: inline-block;
 	width: 45%;
 	background-color: white;
-	padding: 10px;
 	text-align: center;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding: 40px 10px;
 	vertical-align: top;
 }
 #pourquoi-section .box p.pre {
@@ -758,6 +790,9 @@ input:checked + .switch-slider:before {
 	margin: 0;
 	text-transform: uppercase;
 }
+#pourquoi-section .box p.big.bigger {
+	font-size: 92px;
+}
 #pourquoi-section .box p.normal {
 	font-family: 'Open Sans', serif;
 	font-size: 20px;
@@ -768,12 +803,18 @@ input:checked + .switch-slider:before {
 }
 #pourquoi-section .box p.small {
 	font-family: 'Open Sans', serif;
-	font-size: 14px;
+	font-size: 16px;
 	color: black;
 	line-height: 1.4;
 }
 #pourquoi-section .box.small {
 	width: 46%;
+	height: 200px;
+	margin: 10px;
+}
+#pourquoi-section .box.medium {
+	width: 46%;
+	padding: 30px 10px !important;
 	height: 200px;
 	margin: 10px;
 }
@@ -796,6 +837,14 @@ input:checked + .switch-slider:before {
 }
 #footer .left p {
 	margin: 0;
+}
+#footer .end p {
+	font-family: 'Open Sans', serif;
+	font-size: 13px;
+	color: #2F2444;
+	opacity: 0.7;
+	margin: 20px 0 0;
+	text-align: center;
 }
 #footer .left p a {
 	font-family: 'Barlow Condensed', serif;
@@ -960,21 +1009,13 @@ input:checked + .switch-slider:before {
 	}
 	#tabs .tab-content .right p {
 		font-size: 18px;
+		margin-top: 40px;
 	}
 	#tabs .tab-content .quote-container p {
 		font-size: 35px;
 	}
-
-	#deduction .title p {
-		display: block;
-		text-align: center;
-		font-size: 40px;
-	}
-	#deduction .title p:nth-child(2) {
-		text-align: center;
-	}
-	#deduction .title p.small {
-		font-size: 18px;
+	#deduction .title p.deux {
+		letter-spacing: 13px;
 	}
 
 	#deduction .box {
