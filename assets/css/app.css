@@ -846,6 +846,10 @@ input:checked + .switch-slider:before {
 	margin: 20px 0 0;
 	text-align: center;
 }
+#footer .end p a {
+	color: #2F2444;
+	text-decoration: underline;
+}
 #footer .left p a {
 	font-family: 'Barlow Condensed', serif;
 	font-size: 18px;
