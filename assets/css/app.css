@@ -108,8 +108,9 @@ button, .btn-custom {
 #nav .logo {
 	position: absolute;
 	left: 50px;
-	top: 0;
+	top: -5px;
 	z-index: 101;
+	width: 130px;
 }
 #nav .inner {
 	width: 80%;
@@ -289,6 +290,9 @@ button, .btn-custom {
 }
 #tabs .tab-content .left .inline {
 	display: inline-block !important;
+}
+#tabs .tab-content .left .grey-content img {
+	width: 100px;
 }
 #tabs .tab-content .left p {
 	font-family: 'Open Sans', serif;
@@ -724,6 +728,7 @@ input:checked + .switch-slider:before {
 }
 #quand-section .grey-container p.medium {
 	font-family: 'Open Sans', serif;
+	text-transform: uppercase;
 	font-size: 20px;
 	line-height: 1.2;
 	font-weight: 700;
@@ -837,6 +842,9 @@ input:checked + .switch-slider:before {
 }
 #footer .left p {
 	margin: 0;
+}
+#footer .logo img {
+	width: 105px;
 }
 #footer .end p {
 	font-family: 'Open Sans', serif;
