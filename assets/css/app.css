@@ -152,28 +152,46 @@ button, .btn-custom {
 	width: 316px;
 	margin: 30px auto 0;
 }
-
-#bandeau-covid {
-	background-color: #F0322C;
-	padding: 10px;
-	text-align: center;
-}
-#bandeau-covid p {
+#bandeau div div {
 	display: inline-block;
-	color: white;
+	vertical-align: middle;
 }
-#bandeau-covid p.big {
-	font-family: 'Barlow Condensed', serif;
-	font-size: 78px;
-	font-weight: 700;
-	line-height: 1;
+#bandeau {
+	text-align: center;
+	background-color: #F0322C;
+	padding: 20px 10px;
 }
-#bandeau-covid p:nth-child(2) {
-	font-family: 'Open Sans', serif;
-	font-size: 18px;
-	line-height: 1.2;
+#bandeau .title {
 	text-align: left;
-	margin-left: 8px;
+	border-right: 1px solid rgba(255,255,255,0.5);
+}
+#bandeau .title p {
+	font-family: 'Barlow Condensed', serif;
+	font-weight: bold;
+	color: white;
+	font-size: 34px;
+	text-transform: uppercase;
+	line-height: 33px;
+	margin: 0;
+}
+#bandeau .title p.ex {
+	font-family: 'Barlow Condensed', serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 24px;
+	color: white;
+	font-size: 20px;
+	margin: 0;
+}
+#bandeau .text {
+	text-align: left;
+	padding-left: 15px;
+}
+#bandeau .text p {
+	font-size: 15px;
+	margin: 0;
+	color: white;
+	line-height: 16px;
 }
 
 #section-slider {
@@ -916,7 +934,13 @@ input:checked + .switch-slider:before {
 	#quand-section p.dark-grey {
 		text-align: center;
 	}
-
+	#bandeau .title {
+		border: none;
+	}
+	#bandeau .text p {
+		text-align: center;
+		margin-top: 20px;
+	}
 
 	#pourquoi-section .box {
 		width: 100% !important;
@@ -971,16 +995,6 @@ input:checked + .switch-slider:before {
 		width: auto;
 		position: static;
 		transform: none;
-	}
-	#bandeau-covid .text {
-		text-align: left;
-	}
-	#bandeau-covid p:nth-child(1) {
-		font-size: 53px;
-	}
-	#bandeau-covid p:nth-child(2) {
-		font-size: 16px;
-		margin-left: 0;
 	}
 	#section-slider .content .inner {
 		padding: 30px;
