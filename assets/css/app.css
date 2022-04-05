@@ -1010,6 +1010,10 @@ input:checked + .switch-slider:before {
 		width: 80%;
 		margin: 0 auto;
 	}
+	#header h2 {
+		width: 80%;
+		margin: 0 auto;
+	}
 	#header .btn-custom {
 		width: 80%;
 		margin: 40px auto 0;
