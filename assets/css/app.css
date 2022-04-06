@@ -195,7 +195,7 @@ button, .btn-custom {
 	padding-left: 15px;
 }
 #bandeau .text p {
-	font-size: 15px;
+	font-size: 16px;
 	margin: 0;
 	color: white;
 	line-height: 16px;
@@ -263,7 +263,7 @@ button, .btn-custom {
 }
 #tabs .menu a {
 	font-family: 'Barlow Condensed', serif;
-	font-size: 22px;
+	font-size: 26px;
 	color: #2F2444;
 	opacity: 0.5;
 	text-transform: uppercase;
@@ -337,6 +337,9 @@ button, .btn-custom {
 	display: block;
 	line-height: 1.2;
 }
+#tabs .tab-content .right p .bigger {
+	font-size: 20px;
+}
 #tabs .tab-content .right p .separator {
 	display: block;
 	width: 31px;
@@ -366,11 +369,14 @@ button, .btn-custom {
 #tabs .tab-content .grey-content p.big {
 	font-family: 'Barlow Condensed', serif;
 	font-size: 30px;
+	line-height: 33px;
 }
 #tabs .tab-content .grey-content p.small {
 	font-size: 14px;
 	font-weight: normal;
-	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 0;
+	line-height: 0.9;
 }
 
 #tabs .tab-content .quote-container {}
@@ -821,7 +827,7 @@ input:checked + .switch-slider:before {
 }
 #pourquoi-section .box p.pre {
 	font-family: 'Barlow Condensed', serif;
-	font-size: 14px;
+	font-size: 17px;
 	color: #DF514D;
 	font-weight: 600;
 	line-height: 1;
@@ -1002,8 +1008,14 @@ input:checked + .switch-slider:before {
 	}
 	#header {
 		margin-top: 0;
-		padding-top: 60%;
+		padding-top: 0;
+		position: relative;
 		background-position: 55% 50%;
+	}
+	#header .text {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
 	}
 	#header h1 {
 		font-size: 20px;
