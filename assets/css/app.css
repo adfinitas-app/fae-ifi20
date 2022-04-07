@@ -337,8 +337,15 @@ button, .btn-custom {
 	display: block;
 	line-height: 1.2;
 }
+#tabs .tab-content .right p .pastille {
+	width: 85px;
+	float: left;
+	margin-bottom: 40px;
+	margin-right: 10px;
+	margin-top: -10px;
+}
 #tabs .tab-content .right p .bigger {
-	font-size: 20px;
+	font-size: 18px;
 }
 #tabs .tab-content .right p .separator {
 	display: block;
@@ -428,7 +435,7 @@ button, .btn-custom {
 	padding: 20px;
 }
 #deduction .title p.un {
-	font-size: 28px;
+	font-size: 35px;
 	letter-spacing: 1px;
 	line-height: 1.2;
 	color: #DF514D;
@@ -1073,9 +1080,11 @@ input:checked + .switch-slider:before {
 	#tabs .tab-content .left img {
 		margin: 0 auto 20px;
 	}
+	#tabs .tab-content .right {
+		margin-top: 30px;
+	}
 	#tabs .tab-content .right p {
 		font-size: 18px;
-		margin-top: 40px;
 	}
 	#tabs .tab-content .quote-container p {
 		font-size: 35px;
