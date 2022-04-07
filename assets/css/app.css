@@ -144,12 +144,13 @@ button, .btn-custom {
 	font-family: 'Open Sans', serif;
 	color: white;
 	font-size: 30px;
-	text-shadow: 0px 0px 1px black;
+	text-shadow: 1px 1px 1px black;
 	font-weight: 700;
 	line-height: 1.5;
 }
 #header h2 {
 	font-family: 'Open Sans', serif;
+	text-shadow: 1px 1px 1px black;
 	color: white;
 	margin-top: 10px;
 	font-size: 18px;
@@ -377,6 +378,7 @@ button, .btn-custom {
 	font-family: 'Barlow Condensed', serif;
 	font-size: 30px;
 	line-height: 33px;
+	margin-top: 15px;
 }
 #tabs .tab-content .grey-content p.small {
 	font-size: 14px;
@@ -402,7 +404,7 @@ button, .btn-custom {
 	color: black;
 }
 #tabs .tab-content .quote-container p.author span {
-	color: #DF514D;
+	color: #002A51;
 }
 #tabs .tab-content .right p.very-small {
 	margin-top: 20px;
